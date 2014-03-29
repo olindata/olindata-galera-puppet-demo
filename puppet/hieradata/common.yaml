@@ -1,0 +1,91 @@
+---
+galera::mysql_bind_address: 0.0.0.0
+galera::package_name: 'percona-xtradb-cluster-galera-3.x'
+galera::wsrep_cluster_address: 'gcomm://192.168.100.68,192.168.100.71,192.168.100.74,192.168.100.77'
+galera::wsrep_node_address: %{ipaddress_eth1}
+galera::wsrep_node_incoming_address: %{ipaddress_eth1}
+galera::wsrep_provider: '/usr/lib/libgalera_smm.so'
+galera::wsrep_provider_options: 'base_host=%{ipaddress_eth1};gcache.size=1024M'
+galera::wsrep_slave_threads: 16
+galera::wsrep_sst_auth_user: 'sst_xtrabackup'
+galera::wsrep_sst_auth_password: 'jy7sdkh'
+galera::wsrep_sst_receive_address: %{ipaddress_eth1}
+mcollective::middleware_hosts:
+  - 'guernsey'
+mysql::client::package_name: 'percona-xtradb-cluster-client-5.6'
+mysql::server::package_name: 'percona-xtradb-cluster-server-5.6'
+mysql::server::root_password: vnKDs32Q5W4Rkizt
+puppet::agent::environment: 'production'
+puppet::agent::puppet_server: 'master.olindata.vm'
+puppet::agent::puppet_run_style: 'cron'
+profile::mcollective::plugins:
+  puppet:
+    package: true
+  filemgr:
+    package: true
+  service:
+    package: true
+profile::mysql::base::override_options:
+  mysqld:
+    bind_address: 0.0.0.0
+    binlog_format: MIXED
+    bulk_insert_buffer_size: 16M
+    character_set_server: utf8
+    collation_server: utf8_general_ci
+    concurrent_insert: 2
+    default_storage_engine: 'InnoDB'
+    innodb_data_file_path: 'ibdata1:10M:autoextend'
+    innodb_log_files_in_group: 2
+    innodb_log_file_size: '64M'
+    innodb_log_buffer_size: '8M'
+    innodb_buffer_pool_size: '10M'
+    #innodb_additional_mem_pool_size: '10M'
+    innodb_max_dirty_pages_pct: 90
+    innodb_flush_log_at_trx_commit: 1
+    innodb_read_io_threads: 8
+    innodb_write_io_threads: 8
+    innodb_flush_method: 'O_DIRECT'
+    innodb_file_per_table: 1
+    innodb_open_files: 800
+    key_buffer_size: 128M
+    language: /usr/share/mysql/english
+    log-slave-updates: 1
+    log-slow-slave-statements: 1
+    log_queries-not_using_indexes: 1
+    log_slow_admin_statements: 1
+    #log_slow_queries: /var/log/mysql/slow.log
+    log_slow_rate_limit: 1000
+    log_slow_verbosity: query_plan,innodb
+    long_query_time: 10
+    max_allowed_packet: 64M
+    max_binlog_size: 100M
+    max_connections: 800
+    max_connect_errors: 999999
+    max_heap_table_size: 32M
+    min_examined_row_limit: 100000
+    myisam_recover: QUICK,BACKUP
+    myisam_recover: QUICK,BACKUP
+    myisam_sort_buffer_size: 512M
+    open-files-limit: 2000
+    pid_file: /var/lib/mysql/mysqld.pid
+    query_cache_limit: 128K
+    query_cache_size: 0
+    read_buffer_size: 8M
+    read_rnd_buffer_size: 1M
+    skip-name-resolve: 1
+    slave-skip-errors: 1062
+    slave_load_tmpdir: /tmp
+    socket: /var/lib/mysql/mysql.sock
+    sort_buffer_size: 8M
+    sql_mode: 'NO_ENGINE_SUBSTITUTION'
+    sync_binlog: 1
+    #table_cache: 800
+    thread_cache_size: 256
+    tmp_table_size: 32M
+    wait_timeout: 600
+  client:
+    socket: /var/lib/mysql/mysql.sock
+  mysqld_safe:
+    socket: /var/lib/mysql/mysql.sock
+  mysqldump:
+    max_allowed_packet: 64M
