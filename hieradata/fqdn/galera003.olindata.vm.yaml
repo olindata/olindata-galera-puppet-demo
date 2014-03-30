@@ -1,0 +1,25 @@
+---
+profile::mysql::galera::balancermembers:
+  galera_reader_galera003:
+    listening_service: galera_reader
+    ports: - '3306'
+    ipaddresses: - %{ipaddress_eth1}
+    server_names: - %{hostname}
+    options:
+      - 'check port 9200'
+      - 'inter 12000'
+      - 'rise 3 fall 3'
+  galera_writer_galera003:
+    listening_service: galera_writer
+    ports: - '3306'
+    ipaddresses: - %{ipaddress_eth1}
+    server_names: - %{hostname}
+    options:
+      - 'backup'
+      - 'check port 9200'
+      - 'inter 12000'
+      - 'rise 3 fall 3'
+profile::mysql::base::override_options:
+  mysqld:
+    report-host: 'galera003'
+    server-id: 1003

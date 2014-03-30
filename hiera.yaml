@@ -1,0 +1,12 @@
+---
+:merge_behavior: deeper
+:backends:
+ - yaml
+:logger: console
+:yaml:
+ :datadir: /etc/puppet/hieradata
+:hierarchy:
+ - fqdn/%{fqdn}
+ - osfamily/%{osfamily}
+ - lsbdistcodename/%{lsbdistcodename}
+ - common
