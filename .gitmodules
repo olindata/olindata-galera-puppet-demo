@@ -1,0 +1,18 @@
+[submodule "puppet/modules/common/galera"]
+	path = puppet/modules/common/galera
+	url = https://github.com/olindata/puppet-galera
+[submodule "puppet/modules/common/haproxy"]
+	path = puppet/modules/common/haproxy
+	url = https://github.com/olindata/puppetlabs-haproxy
+[submodule "puppet/modules/common/apt"]
+	path = puppet/modules/common/apt
+	url = https://github.com/olindata/puppetlabs-apt
+[submodule "puppet/modules/common/augeas"]
+	path = puppet/modules/common/augeas
+	url = https://github.com/olindata/puppet-augeas
+[submodule "puppet/modules/common/stdlib"]
+	path = puppet/modules/common/stdlib
+	url = https://github.com/olindata/puppetlabs-stdlib
+[submodule "puppet/modules/common/mysql"]
+	path = puppet/modules/common/mysql
+	url = https://github.com/olindata/puppetlabs-mysql
