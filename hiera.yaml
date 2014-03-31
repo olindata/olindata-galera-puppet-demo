@@ -4,7 +4,7 @@
  - yaml
 :logger: console
 :yaml:
- :datadir: /etc/puppet/hieradata
+ :datadir: /etc/puppetlabs/puppet/hieradata
 :hierarchy:
  - fqdn/%{fqdn}
  - osfamily/%{osfamily}

@@ -16,3 +16,15 @@
 [submodule "modules/common/mysql"]
 	path = modules/common/mysql
 	url = https://github.com/olindata/puppetlabs-mysql
+[submodule "modules/common/xinetd"]
+	path = modules/common/xinetd
+	url = https://github.com/olindata/puppetlabs-xinetd.git
+[submodule "modules/common/ssh"]
+	path = modules/common/ssh
+	url = https://github.com/olindata/puppet-ssh.git
+[submodule "modules/common/ntp"]
+	path = modules/common/ntp
+	url = https://github.com/olindata/puppetlabs-ntp.git
+[submodule "modules/common/network"]
+	path = modules/common/network
+	url = https://github.com/olindata/puppet-network.git

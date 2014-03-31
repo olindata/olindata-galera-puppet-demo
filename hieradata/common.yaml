@@ -2,19 +2,19 @@
 galera::mysql_bind_address: 0.0.0.0
 galera::package_name: 'percona-xtradb-cluster-galera-3.x'
 galera::wsrep_cluster_address: 'gcomm://192.168.100.68,192.168.100.71,192.168.100.74,192.168.100.77'
-galera::wsrep_node_address: %{ipaddress_eth1}
-galera::wsrep_node_incoming_address: %{ipaddress_eth1}
+galera::wsrep_node_address: '%{ipaddress_eth1}'
+galera::wsrep_node_incoming_address: '%{ipaddress_eth1}'
 galera::wsrep_provider: '/usr/lib/libgalera_smm.so'
 galera::wsrep_provider_options: 'base_host=%{ipaddress_eth1};gcache.size=1024M'
 galera::wsrep_slave_threads: 16
 galera::wsrep_sst_auth_user: 'sst_xtrabackup'
 galera::wsrep_sst_auth_password: 'jy7sdkh'
-galera::wsrep_sst_receive_address: %{ipaddress_eth1}
+galera::wsrep_sst_receive_address: '%{ipaddress_eth1}'
 mcollective::middleware_hosts:
   - 'guernsey'
 mysql::client::package_name: 'percona-xtradb-cluster-client-5.6'
 mysql::server::package_name: 'percona-xtradb-cluster-server-5.6'
-mysql::server::root_password: vnKDs32Q5W4Rkizt
+mysql::server::root_password: 'vnKDs32Q5W4Rkizt'
 puppet::agent::environment: 'production'
 puppet::agent::puppet_server: 'master.olindata.vm'
 puppet::agent::puppet_run_style: 'cron'
