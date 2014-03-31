@@ -12,6 +12,8 @@ class profile::mysql::base {
   Class['profile::base'] ~> Package['percona-toolkit']
   Class['profile::base'] ~> Package['mysql-server']
 
+  Exec['apt_update'] -> Package['mysql_client'] -> Package['mysql-server']
+
   # load the mysql options from hiera and pass them to mysql::server
   $override_options = hiera_hash('profile::mysql::base::override_options', undef)
 
