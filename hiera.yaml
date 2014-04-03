@@ -8,5 +8,4 @@
 :hierarchy:
  - fqdn/%{fqdn}
  - osfamily/%{osfamily}
- - lsbdistcodename/%{lsbdistcodename}
  - common

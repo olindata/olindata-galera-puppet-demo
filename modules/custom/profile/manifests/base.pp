@@ -29,8 +29,8 @@ class profile::base {
     'redhat' : { include profile::yum }
   }
 
+  # make sure some of the base packages are present
   package { 'vim': ensure => present, }
-
   package { 'screen': ensure => present, }
 
 }
