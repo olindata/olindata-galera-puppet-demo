@@ -2,6 +2,8 @@
 #
 #
 class role::master {
-  # include profiles to make this machine a master
+  include profile::puppet::master
+  include profile::puppet::puppetdb
+  include profile::foreman
 
 }
