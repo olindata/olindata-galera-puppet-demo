@@ -28,3 +28,6 @@
 [submodule "modules/common/network"]
 	path = modules/common/network
 	url = https://github.com/olindata/puppet-network.git
+[submodule "modules/common/concat"]
+	path = modules/common/concat
+	url = https://github.com/olindata/puppet-concat.git
