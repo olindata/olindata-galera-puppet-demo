@@ -8,3 +8,6 @@ puppet::master::puppet_passenger: true
 puppet::passenger::passenger_version: 4
 puppetdb::database: 'embedded'
 puppetdb::master::config::puppetdb_server: 'master.olindata.vm'
+foreman::foreman_url: 'foreman.olindata.vm'
+foreman::ssl: true
+puppet::master::reports: 'store, foreman'
