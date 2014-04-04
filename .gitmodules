@@ -31,3 +31,21 @@
 [submodule "modules/common/concat"]
 	path = modules/common/concat
 	url = https://github.com/olindata/puppet-concat.git
+[submodule "modules/common/foreman"]
+	path = modules/common/foreman
+	url = https://github.com/olindata/puppet-foreman.git
+[submodule "modules/common/puppet"]
+	path = modules/common/puppet
+	url = https://github.com/olindata/puppetlabs-puppet.git
+[submodule "modules/common/apache"]
+	path = modules/common/apache
+	url = https://github.com/olindata/puppetlabs-apache.git
+[submodule "modules/common/puppetdb"]
+	path = modules/common/puppetdb
+	url = https://github.com/olindata/puppetlabs-puppetdb.git
+[submodule "modules/common/inifile"]
+	path = modules/common/inifile
+	url = https://github.com/olindata/puppetlabs-inifile.git
+[submodule "modules/common/postgresql"]
+	path = modules/common/postgresql
+	url = https://github.com/olindata/puppet-postgresql.git

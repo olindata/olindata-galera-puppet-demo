@@ -11,3 +11,4 @@ puppetdb::master::config::puppetdb_server: 'master.olindata.vm'
 foreman::foreman_url: 'foreman.olindata.vm'
 foreman::ssl: true
 puppet::master::reports: 'store, foreman'
+puppet::master::reporting: true
