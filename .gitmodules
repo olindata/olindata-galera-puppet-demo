@@ -52,3 +52,6 @@
 [submodule "modules/common/mcollective"]
 	path = modules/common/mcollective
 	url = https://github.com/olindata/puppetlabs-mcollective.git
+[submodule "modules/common/datacat"]
+	path = modules/common/datacat
+	url = https://github.com/olindata/puppet-datacat.git
