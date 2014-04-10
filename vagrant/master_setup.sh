@@ -13,4 +13,6 @@ wget -O/etc/yum.repos.d/scl.repo http://dev.centos.org/centos/6/SCL/scl.repo
 echo '===> installing puppet'
 yum install -y puppet-server puppet puppetdb puppetdb-terminus
 echo '===> starting puppetmaster'
-service puppetmaster start
+/usr/sbin/puppetdb ssl-setup
+service puppetdb restart
+service puppetmaster restart

@@ -1,14 +1,21 @@
 ---
 apache::default_vhost: false
 apache::mod::passenger::passenger_root: '/usr/lib/ruby/gems/1.8/gems/passenger-4.0.5'
-mcollective::client: true
-mcollective::middleware: true
-puppet::master::modulepath: '/etc/puppet/modules/common:/etc/puppet/modules/custom'
-puppet::master::puppet_passenger: true
-puppet::passenger::passenger_version: 4
-puppetdb::database: 'embedded'
-puppetdb::master::config::puppetdb_server: 'master.olindata.vm'
 foreman::foreman_url: 'foreman.olindata.vm'
 foreman::ssl: true
+foreman::server_ssl_ca: '/etc/puppet/ssl/certs/ca.pem'
+foreman::server_ssl_chain: "/etc/puppet/ssl/certs/ca.pem"
+foreman::server_ssl_cert: "/etc/puppet/ssl/certs/%{fqdn}.pem"
+foreman::server_ssl_key:  "/etc/puppet/ssl/private_keys/%{fqdn}.pem"
+mcollective::client: true
+mcollective::middleware: true
+puppet::master::autosign: true
+puppet::master::modulepath: '/etc/puppet/modules/common:/etc/puppet/modules/custom'
+puppet::master::puppet_passenger: true
+puppet::master::puppet_ssldir: /etc/puppet/ssl
 puppet::master::reports: 'store, foreman'
 puppet::master::reporting: true
+puppet::passenger::passenger_version: 4
+puppet::passenger::puppet_ssldir: '/etc/puppet/ssl'
+puppetdb::database: 'embedded'
+puppetdb::master::config::puppetdb_server: 'master.olindata.vm'
