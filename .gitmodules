@@ -49,3 +49,6 @@
 [submodule "modules/common/postgresql"]
 	path = modules/common/postgresql
 	url = https://github.com/olindata/puppet-postgresql.git
+[submodule "modules/common/mcollective"]
+	path = modules/common/mcollective
+	url = https://github.com/olindata/puppetlabs-mcollective.git
