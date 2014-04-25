@@ -12,9 +12,20 @@ cd ~; wget http://yum.puppetlabs.com/puppetlabs-release-el-6.noarch.rpm; yum ins
 wget -O/etc/yum.repos.d/scl.repo http://dev.centos.org/centos/6/SCL/scl.repo
 echo '===> installing puppet'
 yum install -y puppet-server puppet puppetdb puppetdb-terminus
-echo '===> starting puppetmaster'
+echo '===> restarting puppetmaster'
 service puppetmaster restart
 service puppetdb restart
+echo '===> setting up puppetdb ssl'
 /usr/sbin/puppetdb ssl-setup
+echo '===> restarting puppetmaster for puppetdb to work properly'
 service puppetmaster restart
 service puppetdb restart
+sleep 30
+echo '===> running puppet agent'
+puppet agent -t
+echo '===> agent run will complete under webrick, now kill that'
+pkill -u puppet -f master
+echo '===> starting puppetmaster under passenger'
+service httpd start
+echo '===> run one more agent run'
+puppet agent -t

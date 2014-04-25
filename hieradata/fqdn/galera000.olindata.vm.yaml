@@ -28,7 +28,7 @@ profile::haproxy::galera::listen:
       - 80
     mode: http
     ipaddress: 
-      - "%{ipaddress_eth0}"
+      - "%{ipaddress_eth1}"
 profile::mysql::galera::balancermembers:
   galera_reader_000:
     listening_service: 'galera_reader'
